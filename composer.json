@@ -1,0 +1,20 @@
+{
+  "name": "qubiqxcms/admin",
+  "type": "asgard-theme",
+  "description": "Admin theme",
+  "authors": [
+    {
+      "name": "Robin van Maasakker",
+      "email": "Robin@qubix.com"
+    }
+  ],
+  "autoload-dev": {
+    "psr-4": {
+      "Themes\\Admin\\": ".",
+      "Themes\\": "Themes/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dependencies": true
+}

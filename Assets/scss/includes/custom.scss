@@ -1,0 +1,123 @@
+.selectize-input {
+  background-color: transparent !important;
+}
+
+.selectize-control.multi .selectize-input > div, .selectize-control.multi .selectize-input [data-value] {
+  background-color: transparent !important;
+  background-image: none !important;
+  background: none !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+.selectize-control.plugin-remove_button [data-value] .remove {
+  border-left: 1px solid #fff !important;
+}
+
+.tab-pane {
+  margin-left: -15px !important;
+}
+
+i {
+  color: #fff;
+}
+
+.content__title {
+  margin-bottom: -5px;
+  padding: 0;
+}
+
+.actions {
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+select {
+  color: grey !important;
+}
+
+//Old
+.breadcrumb-header {
+  margin-bottom: 30px;
+}
+
+.display-flex {
+  display: inline-flex;
+}
+
+.btn-nostyle {
+  background-color: transparent;
+  border: none;
+}
+
+.main-content {
+  margin-bottom: 30px;
+}
+
+.control-label {
+  text-align: left !important;
+}
+
+td {
+  border-top: 0px solid red !important;
+}
+
+tbody > tr {
+  border-top: 1px solid rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 0px solid transparent !important;
+}
+
+#preview_thumb {
+  max-width: 500px;
+}
+
+.extension_icon {
+  height: 30px;
+}
+
+.file_preview > img {
+  max-height: 200px;
+  min-width: 50px;
+  display: none;
+  position: absolute;
+  border: 2px solid orange;
+  border-radius: 5px;
+  top: -160px;
+}
+
+.preview_image:hover > .file_preview > img {
+  display: block;
+}
+
+.slider_image_preview > img {
+  max-height: 150px;
+  display: none;
+  position: absolute;
+  border: 3px solid orange;
+  border-radius: 5px;
+  top: 20px;
+}
+
+.slider_image_preview:hover > img {
+  display: block;
+}
+
+.file_full_name {
+  padding-left: 20px;
+}
+
+.create_link {
+  float: right;
+}
+
+.refresh_pages_json{
+  float: right;
+  margin-top: -9px;
+  margin-right: 20px;
+}
+
+.img-preview {
+  max-width: 100%;
+}

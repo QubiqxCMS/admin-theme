@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+.header {
+}
+
+img {
+    width: 158px;
+    position: absolute;
+    top: 25px;
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .header {
+        top: calc(50% - 105px);
+        left: calc(50% - 80px);
+    }
+}
+
+body{
+    overflow-y: hidden;
+}
