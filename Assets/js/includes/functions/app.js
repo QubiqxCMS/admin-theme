@@ -52,7 +52,7 @@ $(document).ready(function () {
      Theme Switch
      -------------------------------------------------*/
     $('body').on('click', '.themes__item', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
 
         // Set active item
         $('.themes__item').removeClass('active');

@@ -28,7 +28,7 @@ $theme-bgs: (
     background-color: $bgcolor;
 
     @include media-breakpoint-up(sm) {
-      background-image: url('../../../../files/bg/#{$bgimg}');
+      background-image: url('../../../../files/backgrounds/#{$bgimg}');
     }
   }
 }
