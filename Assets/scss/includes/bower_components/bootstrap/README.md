@@ -74,7 +74,7 @@ bootstrap/
 │   ├── bootstrap.min.css
 │   └── bootstrap.min.css.map
 └── js/
-    ├── bootstrap.js
+    ├── bootstrap.min.js
     └── bootstrap.min.js
 ```
 
