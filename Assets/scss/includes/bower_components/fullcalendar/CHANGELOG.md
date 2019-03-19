@@ -1205,7 +1205,7 @@ v1.2 (2009-05-31)
 	- can also provide 'className' and 'draggable' options
 - date utilties moved from $ to $.fullCalendar
 - more documentation in source code
-- minified version of fullcalendar.js
+- minified version of fullcalendar.css
 - test suit (available from svn)
 - top buttons now use `<button>` w/ an inner `<span>` for better css cusomization
 	- thus CSS has changed. IF UPGRADING FROM PREVIOUS VERSIONS,
