@@ -1,6 +1,7 @@
 require('./includes/vue-loading-spinner');
 require('./includes/articles');
 require('./includes/jquery-sortable');
+require('./includes/jscolor');
 
 //Theme
 require('./includes/app.min');
