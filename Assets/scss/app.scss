@@ -5,9 +5,8 @@
 @import "./includes/loadingspinner";
 @import "./includes/file-manager";
 @import "./includes/datepicker";
-@import "./includes/fullcalendar";
 
-header{
+header {
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -15,10 +14,16 @@ header{
   -o-background-size: cover;
   background-size: cover;
 }
-.full-width{
+
+.full-width {
   width: 100%;
 }
 
-.sidebar{
+.sidebar {
   overflow-y: auto;
+}
+
+.fc-icon {
+  color: black !important;
+  margin-top: 15px !important;
 }
