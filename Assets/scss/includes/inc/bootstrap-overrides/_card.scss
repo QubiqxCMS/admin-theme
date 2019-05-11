@@ -69,6 +69,12 @@
   margin-bottom: 1rem;
   font-weight: normal;
 }
+.card-body__bigger-title {
+  font-size: 1.50rem;
+  color: $headings-color;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 
 .card--fullscreen {
   position: fixed;
