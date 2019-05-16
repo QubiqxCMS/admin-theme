@@ -27,3 +27,9 @@ header {
   color: black !important;
   margin-top: 15px !important;
 }
+
+.hideckeditorwrapper{
+  .cke_top{
+    display: none;
+  }
+}
