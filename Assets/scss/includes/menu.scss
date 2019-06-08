@@ -24,8 +24,12 @@ ol.serialization {
   }
   font-size: 16px;
   &> li, &> li > ol > li{
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    //border-top: 1px solid #fff;
+    //border-bottom: 1px solid #fff;
+    background: transparentize(black, 0.8);
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 .menu_actions{
