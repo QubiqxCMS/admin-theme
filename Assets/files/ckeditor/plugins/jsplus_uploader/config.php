@@ -1,4 +1,10 @@
 <?php
+
+function value($value)
+{
+	return $value instanceof Closure ? $value() : $value;
+}
+
 function env($key, $default = null)
 {
 	$value = getenv($key);
