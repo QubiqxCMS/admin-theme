@@ -47,7 +47,7 @@ $config['BaseUrl'] = '/public/Themes/' . env('FRONTEND_THEME') . '/files';
 // You can change it, see this example:
 // $config['BaseDir'] = "/var/www/ckeditor_or_tinymce/jsplus_uploader/userfiles/";
 //$config['BaseDir'] = dirname(__FILE__).'/public/';
-$config['BaseDir'] = public_path() . '/public/uploads/';
+//$config['BaseDir'] = env('APP_URL') . '/public/uploads/';
 $config['ResourceType']['Files'] = Array(
 		'maxSize' => 0, 			// maxSize in bytes for uploaded files, 0 for any
 		'allowedExtensions' => '*' 	// means any extensions are allowed
