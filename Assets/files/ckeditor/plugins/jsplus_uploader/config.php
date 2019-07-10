@@ -46,8 +46,8 @@ function env($key, $default = null)
 // By default it automatically detects the directory.
 // You can change it, see this example:
 // $config['BaseDir'] = "/var/www/ckeditor_or_tinymce/jsplus_uploader/userfiles/";
-//$config['BaseDir'] = dirname(__FILE__).'/public/';
-$config['BaseDir'] = '/public/';
+$config['BaseDir'] = dirname(__FILE__).'/public/';
+//$config['BaseDir'] = '/public/';
 $config['ResourceType']['Files'] = Array(
 		'maxSize' => 0, 			// maxSize in bytes for uploaded files, 0 for any
 		'allowedExtensions' => '*' 	// means any extensions are allowed
