@@ -38,7 +38,7 @@ function env($key, $default = null)
 // Will affect to client (JS) part of plugins.
 // By default script is configured to automatically detect it.
 // If you want to change it, do it like this:
- $config['BaseUrl'] = env('APP_URL') . '/Themes/Admin/themefiles/ckeditor/plugins/jsplus_uploader/userfiles/';
+ $config['BaseUrl'] = env('APP_URL') . '/Themes/Admin/themefiles/ckeditor/plugins/jsplus_uploader/';
 //$config['BaseUrl'] = preg_replace('/(uploader\.php.*)/', 'userfiles/', $_SERVER['PHP_SELF']);
 //$config['BaseUrl'] = '/public/Themes/' . env('FRONTEND_THEME') . '/files';
 // Absolute or relative path to directory on the server where uploaded files will be stored.
@@ -47,7 +47,7 @@ function env($key, $default = null)
 // You can change it, see this example:
 // $config['BaseDir'] = "/var/www/ckeditor_or_tinymce/jsplus_uploader/userfiles/";
 //$config['BaseDir'] = dirname(__FILE__).'/public/';
-$config['BaseDir'] = '/public/uploads/';
+$config['BaseDir'] = '/public/';
 $config['ResourceType']['Files'] = Array(
 		'maxSize' => 0, 			// maxSize in bytes for uploaded files, 0 for any
 		'allowedExtensions' => '*' 	// means any extensions are allowed
