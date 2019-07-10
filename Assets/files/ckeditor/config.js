@@ -8,5 +8,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.language = 'nl';
 	// config.uiColor = '#AADC6E';
     config.filebrowserImageBrowseUrl = '/file-manager/ckeditor';
-    config.baseHref = 'http://qubiqx.robin:8080/';
+    config.extraPlugins = 'jsplus_easy_file';
 };
