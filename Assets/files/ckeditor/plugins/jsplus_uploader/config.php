@@ -6,7 +6,7 @@
 // If you want to change it, do it like this:
 // $config['BaseUrl'] = 'http://yoursite.com/ckeditor_or_tinymce/plugins/jsplus_uploader/userfiles/';
 //$config['BaseUrl'] = preg_replace('/(uploader\.php.*)/', 'userfiles/', $_SERVER['PHP_SELF']);
-$config['BaseUrl'] = '/public/Themes/' . getActiveTheme() . '/files';
+$config['BaseUrl'] = '/public/Themes/' . env('FRONTEND_THEME') . '/files';
 // Absolute or relative path to directory on the server where uploaded files will be stored.
 // Used by this PHP script only.
 // By default it automatically detects the directory.
