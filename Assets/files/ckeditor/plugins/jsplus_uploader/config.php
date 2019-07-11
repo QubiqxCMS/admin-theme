@@ -1,44 +1,19 @@
 <?php
-
-function value($value)
-{
-	return $value instanceof Closure ? $value() : $value;
-}
-
-function env($key, $default = null)
-{
-	$value = getenv($key);
-
-	if ($value === false) {
-		return value($default);
-	}
-
-	switch (strtolower($value)) {
-		case 'true':
-		case '(true)':
-			return true;
-		case 'false':
-		case '(false)':
-			return false;
-		case 'empty':
-		case '(empty)':
-			return '';
-		case 'null':
-		case '(null)':
-			return;
-	}
-
-	if (($valueLength = strlen($value)) > 1 && $value[0] === '"' && $value[$valueLength - 1] === '"') {
-		return substr($value, 1, -1);
-	}
-
-	return $value;
+foreach (explode("\n", file_get_contents('../../../../../../../.env')) as $e) {
+    if (strpos($e, 'APP_URL') !== false) {
+        $l = explode("=", $e);
+        $app_url = $l[1];
+    }
+    if (strpos($e, 'FRONTEND_THEME') !== false) {
+        $l = explode("=", $e);
+        $frontend_theme = $l[1];
+    }
 }
 // Absolute URL to upload folder via HTTP.
 // Will affect to client (JS) part of plugins.
 // By default script is configured to automatically detect it.
 // If you want to change it, do it like this:
- $config['BaseUrl'] = '/Themes/' . env('FRONTEND_THEME') . '/files';
+$config['BaseUrl'] = $app_url . '/Themes/' . $frontend_theme . '/files';
 // $config['BaseUrl'] = env('APP_URL') . '/Themes/' . env('FRONTEND_THEME') . '/files';
 //$config['BaseUrl'] = preg_replace('/(uploader\.php.*)/', 'userfiles/', $_SERVER['PHP_SELF']);
 //$config['BaseUrl'] = '/public/Themes/' . env('FRONTEND_THEME') . '/files';
@@ -47,16 +22,16 @@ function env($key, $default = null)
 // By default it automatically detects the directory.
 // You can change it, see this example:
 // $config['BaseDir'] = "/var/www/ckeditor_or_tinymce/jsplus_uploader/userfiles/";
-$config['BaseDir'] = dirname(__FILE__).'/';
+$config['BaseDir'] = '../../../../../../../public/Themes/' . $frontend_theme . '/files';
 //$config['BaseDir'] = '/public/';
 $config['ResourceType']['Files'] = Array(
-		'maxSize' => 0, 			// maxSize in bytes for uploaded files, 0 for any
-		'allowedExtensions' => '*' 	// means any extensions are allowed
+    'maxSize' => 0,            // maxSize in bytes for uploaded files, 0 for any
+    'allowedExtensions' => '*'    // means any extensions are allowed
 );
 
 $config['ResourceType']['Images'] = Array(
-		'maxSize' => 16*1024*1024, 	// maxSize in bytes for uploaded images, 0 for any
-		'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
+    'maxSize' => 16 * 1024 * 1024,    // maxSize in bytes for uploaded images, 0 for any
+    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
 );
 
 $config['JPEGQuality'] = 95; // Will be used for resizing JPEG images
@@ -74,10 +49,9 @@ $config['AllowExternalWebsites'] = ''; // Crossdomain upload is disabled by defa
 // $config['AllowExternalWebsites'] = '*';
 
 
-
 if (substr($config['BaseUrl'], -1) !== '/')
-	$config['BaseUrl'] .= '/';
+    $config['BaseUrl'] .= '/';
 if (substr($config['BaseDir'], -1) !== '/' && substr($config['BaseDir'], -1) !== '\\')
-	$config['BaseDir'] .= '/';
+    $config['BaseDir'] .= '/';
 
 ?>
