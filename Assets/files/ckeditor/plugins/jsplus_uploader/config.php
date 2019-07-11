@@ -1,25 +1,20 @@
 <?php
-//foreach (explode("\n", file_get_contents('../../../../../../../.env')) as $e) {
-//    if (strpos($e, 'APP_URL') !== false) {
-//        $l = explode("=", $e);
-//        $app_url = $l[1];
-//    }
-//    if (strpos($e, 'FRONTEND_THEME') !== false) {
-//        $l = explode("=", $e);
-//        $frontend_theme = $l[1];
-//    }
-//}
-$baseDir = '../../../../../../../';
-require_once $baseDir . 'vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::create($baseDir);
-$dotenv->load();
+foreach (explode("\n", file_get_contents('../../../../../../../.env')) as $e) {
+    if (strpos($e, 'APP_URL') !== false) {
+        $l = explode("=", $e);
+        $app_url = $l[1];
+    }
+    if (strpos($e, 'FRONTEND_THEME') !== false) {
+        $l = explode("=", $e);
+        $frontend_theme = $l[1];
+    }
+}
 
-echo getenv('FRONTEND_THEME');
 // Absolute URL to upload folder via HTTP.
 // Will affect to client (JS) part of plugins.
 // By default script is configured to automatically detect it.
 // If you want to change it, do it like this:
-$config['BaseUrl'] = getenv('APP_URL') . '/Themes/' . getenv('FRONTEND_THEME') . '/files';
+$config['BaseUrl'] = $app_url . '/Themes/' . $frontend_theme . '/files';
 // $config['BaseUrl'] = env('APP_URL') . '/Themes/' . env('FRONTEND_THEME') . '/files';
 //$config['BaseUrl'] = preg_replace('/(uploader\.php.*)/', 'userfiles/', $_SERVER['PHP_SELF']);
 //$config['BaseUrl'] = '/public/Themes/' . env('FRONTEND_THEME') . '/files';
@@ -28,7 +23,7 @@ $config['BaseUrl'] = getenv('APP_URL') . '/Themes/' . getenv('FRONTEND_THEME') .
 // By default it automatically detects the directory.
 // You can change it, see this example:
 // $config['BaseDir'] = "/var/www/ckeditor_or_tinymce/jsplus_uploader/userfiles/";
-$config['BaseDir'] = '../../../../../../../public/Themes/' . getenv('FRONTEND_THEME') . '/files';
+$config['BaseDir'] = '../../../../../../../public/Themes/' . $frontend_theme . '/files';
 //$config['BaseDir'] = '/public/';
 $config['ResourceType']['Files'] = Array(
     'maxSize' => 0,            // maxSize in bytes for uploaded files, 0 for any
