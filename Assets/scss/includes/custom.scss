@@ -129,3 +129,30 @@ tbody > tr {
     }
   }
 }
+
+.feedback-sidebar{
+  background-color: black;
+  transition: 0.3s;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  padding-top: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  p{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-right: 5px;
+  }
+
+  &:hover{
+    background-color: lighten(black, 20%);
+    transition: 0.3s;
+  }
+}
