@@ -36,3 +36,8 @@ header {
 .selectize-dropdown, .selectize-input, .selectize-input input{
   color: grey !important;
 }
+.select{
+  &:before{
+    display: none;
+  }
+}
