@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Help and Contact";
-	$description = "";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Help and Contact';
+    $description = '';
 ?>
 
 <h1>Contact</h1>

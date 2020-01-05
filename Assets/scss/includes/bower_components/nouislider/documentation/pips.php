@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Handles and Slider Values";
-	$description = "";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Handles and Slider Values';
+    $description = '';
 ?>
 
 <h1>Adding a scale/pips to a slider</h1>

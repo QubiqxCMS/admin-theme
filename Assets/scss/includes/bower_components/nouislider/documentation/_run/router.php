@@ -1,34 +1,36 @@
 <?php
 
-	chdir('../');
+declare(strict_types=1);
 
-	$request = parse_url(strtolower($_SERVER['REQUEST_URI']));
-	$page = rtrim(substr($request['path'], strlen('/nouislider/')), '/');
+    chdir('../');
 
-	if ( !$page ) {
-		$page = 'index';
-	}
+    $request = parse_url(strtolower($_SERVER['REQUEST_URI']));
+    $page = rtrim(substr($request['path'], strlen('/nouislider/')), '/');
 
-	$file = $page . '.php';
-	$file_menu = '_run/menu.php';
+    if (!$page) {
+        $page = 'index';
+    }
 
-	require '_run/helpers.php';
+    $file = $page.'.php';
+    $file_menu = '_run/menu.php';
 
-	if ( !file_exists($file) ){
-		header('HTTP/1.0 404 Not Found');
-		$file = '_run/404.php';
-	}
+    require '_run/helpers.php';
 
-	// Defaults for title and description.
-	$title = "";
-	$description = "";
+    if (!file_exists($file)) {
+        header('HTTP/1.0 404 Not Found');
+        $file = '_run/404.php';
+    }
 
-	ob_start();
+    // Defaults for title and description.
+    $title = '';
+    $description = '';
 
-	include $file;
-	$content = ob_get_contents();
+    ob_start();
 
-	ob_end_clean();
+    include $file;
+    $content = ob_get_contents();
 
-	$distribute = '/noUiSlider/distribute';
-	include '_run/index.php';
+    ob_end_clean();
+
+    $distribute = '/noUiSlider/distribute';
+    include '_run/index.php';

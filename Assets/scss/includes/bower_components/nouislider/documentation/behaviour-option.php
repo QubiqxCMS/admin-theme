@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - User Interaction Settings";
-	$description = "noUiSlider supports a ton of features, such as dragging the range, or setting fixed handle distances.";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - User Interaction Settings';
+    $description = 'noUiSlider supports a ton of features, such as dragging the range, or setting fixed handle distances.';
 ?>
 
 <h1>Slider behaviour</h1>

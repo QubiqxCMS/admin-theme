@@ -1,32 +1,37 @@
 <?php
 
-	function fgc ( $name ) {
-		return file_get_contents( './' . $GLOBALS['page'] . '/' .$name);
-	}
+declare(strict_types=1);
 
-	function code ( $name, $encode = false ) {
+    function fgc($name)
+    {
+        return file_get_contents('./'.$GLOBALS['page'].'/'.$name);
+    }
 
-		$c = fgc($name . '.js');
+    function code($name, $encode = false)
+    {
+        $c = fgc($name.'.js');
 
-		if ( $encode ) {
-			$c = htmlentities($c);
-		}
+        if ($encode) {
+            $c = htmlentities($c);
+        }
 
-		echo "\r\n".'<pre><code>' . $c . '</code></pre>';
-	}
+        echo "\r\n".'<pre><code>'.$c.'</code></pre>';
+    }
 
-	function run ( $name ){
-		echo "\r\n".'<script>'."\r\n" . fgc($name . '.js') . '</script>';
-	}
+    function run($name)
+    {
+        echo "\r\n".'<script>'."\r\n".fgc($name.'.js').'</script>';
+    }
 
-	function loadShowCSS ( $name ) {
+    function loadShowCSS($name)
+    {
+        $content = fgc($name.'.css');
 
-		$content = fgc($name . '.css');
+        echo "\r\n".'<style>'.$content.'</style>'.
+        '<pre class="language-css"><code>'.$content.'</code></pre>';
+    }
 
-		echo "\r\n".'<style>' . $content . '</style>' .
-		'<pre class="language-css"><code>' . $content . '</code></pre>';
-	}
-
-	function sect ( $title ) {
-		echo '<a href="#section-' . $title . '" id="section-' . $title . '" class="section-link">&sect;</a>';
-	}
+    function sect($title)
+    {
+        echo '<a href="#section-'.$title.'" id="section-'.$title.'" class="section-link">&sect;</a>';
+    }

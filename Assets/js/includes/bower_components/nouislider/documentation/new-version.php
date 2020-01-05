@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - New Version: noUiSlider 7";
-	$description = "";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - New Version: noUiSlider 7';
+    $description = '';
 ?>
 
 <h1>noUiSlider 8 release information</h1>

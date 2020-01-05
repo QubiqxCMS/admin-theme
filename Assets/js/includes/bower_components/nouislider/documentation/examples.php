@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Examples and hints";
-	$description = "noUiSlider has a selection of examples you can use to implement a slider easily. Take a look!";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Examples and hints';
+    $description = 'noUiSlider has a selection of examples you can use to implement a slider easily. Take a look!';
 ?>
 
 <section>

@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Disabling, Updating and Styling";
-	$description = "noUiSlider comes with a beautiful theme. You can temporarily disable a slider element.";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Disabling, Updating and Styling';
+    $description = 'noUiSlider comes with a beautiful theme. You can temporarily disable a slider element.';
 ?>
 
 <h1>More...</h1>

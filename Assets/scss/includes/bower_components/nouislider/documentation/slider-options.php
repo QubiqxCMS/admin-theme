@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Options and settings";
-	$description = "There are many options to make noUiSlider do exactly what you need. Read all about these options and find the one you need.";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Options and settings';
+    $description = 'There are many options to make noUiSlider do exactly what you need. Read all about these options and find the one you need.';
 ?>
 
 <h1>Options</h1>

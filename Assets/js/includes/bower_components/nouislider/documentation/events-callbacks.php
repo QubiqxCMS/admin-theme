@@ -1,6 +1,6 @@
-<?php
-	$title = "noUiSlider - Events and callbacks";
-	$description = "Listen to everything that happens, and run your code when you want too. noUiSlider has a bunch of events and callbacks. Read all about them!";
+<?php declare(strict_types=1);
+$title = 'noUiSlider - Events and callbacks';
+    $description = 'Listen to everything that happens, and run your code when you want too. noUiSlider has a bunch of events and callbacks. Read all about them!';
 ?>
 
 <h1>Events</h1>

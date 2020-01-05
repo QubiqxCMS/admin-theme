@@ -21,7 +21,7 @@
 
 <body class="language-javascript">
 
-	<?php if ( $page == 'index' ): ?>
+	<?php if ('index' == $page) { ?>
 
 		<div class="index-demo">
 
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 
-	<?php endif; ?>
+	<?php } ?>
 
 	<?php include $file_menu; ?>
 
@@ -60,6 +60,8 @@
 
 	<script src="/nouislider/documentation/assets/prism.js"></script>
 
-	<?php $t = $_SERVER['DOCUMENT_ROOT'] . '/private'; if ( file_exists($t) ) include $t; ?>
+	<?php $t = $_SERVER['DOCUMENT_ROOT'].'/private'; if (file_exists($t)) {
+    include $t;
+} ?>
 
 </body>
