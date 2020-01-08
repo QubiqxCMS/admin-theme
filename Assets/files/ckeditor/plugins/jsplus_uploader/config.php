@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 foreach (explode("\n", file_get_contents('../../../../../../../.env')) as $e) {
-    if (false !== strpos($e, 'APP_URL')) {
+    if (strpos($e, 'APP_URL') !== false) {
         $l = explode('=', $e);
         $app_url = $l[1];
     }
-    if (false !== strpos($e, 'FRONTEND_THEME')) {
+    if (strpos($e, 'FRONTEND_THEME') !== false) {
         $l = explode('=', $e);
         $frontend_theme = $l[1];
     }
@@ -51,9 +51,9 @@ $config['AllowExternalWebsites'] = ''; // Crossdomain upload is disabled by defa
 // or to allow all websites (with caution!):
 // $config['AllowExternalWebsites'] = '*';
 
-if ('/' !== substr($config['BaseUrl'], -1)) {
+if (substr($config['BaseUrl'], -1) !== '/') {
     $config['BaseUrl'] .= '/';
 }
-if ('/' !== substr($config['BaseDir'], -1) && '\\' !== substr($config['BaseDir'], -1)) {
+if (substr($config['BaseDir'], -1) !== '/' && substr($config['BaseDir'], -1) !== '\\') {
     $config['BaseDir'] .= '/';
 }
