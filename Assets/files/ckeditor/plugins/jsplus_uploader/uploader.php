@@ -109,7 +109,7 @@ function uploadFile(
     $ok = false;
     $i = -1;
     do {
-        ++$i;
+        $i++;
         if ($i == 0) {
             $fileName = $name;
         } else {
@@ -192,7 +192,7 @@ function rehost($url, $maxSize)
     if (file_exists($tmpDir.'/'.$file)) {
         $n = 1;
         do {
-            ++$n;
+            $n++;
         } while (file_exists($tmpDir.'/'.$n.'_'.$file));
         $file = $n.'_'.$file;
     }
@@ -231,7 +231,7 @@ function upload($doThumb, $imgEnlarge, $imgWidth, $imgHeight, $thumbEnlarge, $th
         $data = $_FILES['upload'];
         $files = [];
         if (is_array($data['name'])) {
-            for ($i = 0; count($data['name']) > $i; ++$i) {
+            for ($i = 0; count($data['name']) > $i; $i++) {
                 $files[] = [
                     'name' => $data['name'][$i],
                     'tmp_name' => $data['tmp_name'][$i],
