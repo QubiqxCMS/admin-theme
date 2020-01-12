@@ -116,7 +116,7 @@
 
     &:before {
       font-family: $font-family-icon;
-      content: '\f1c3';
+      content: '\f002';
       font-size: 1.5rem;
       color: $body-color;
       position: absolute;
@@ -136,7 +136,7 @@
 
 .select2-search__field {
   color: $input-color;
-  
+
   @include placeholder() {
     color: $input-placeholder-color;
   }

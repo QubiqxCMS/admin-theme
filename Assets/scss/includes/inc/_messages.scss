@@ -31,7 +31,7 @@ $message-sidebar-width: 23rem;
 
   .form-group {
     &:before {
-      @include font-icon('\f1c3', 1.3rem);
+      @include font-icon('\f002', 1.3rem);
       position: absolute;
       left: 0;
       bottom: 0.35rem;
@@ -139,7 +139,7 @@ $message-sidebar-width: 23rem;
   resize: none;
   background-color: transparent;
   color: $input-color;
-  
+
   @include placeholder() {
     color: $input-placeholder-color;
   }

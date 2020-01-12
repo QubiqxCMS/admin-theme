@@ -15,6 +15,5 @@ require('./includes/bower_components/peity/jquery.peity.min');
 require('./includes/bower_components/jqTree/tree.jquery');
 require('./includes/bower_components/flatpickr/dist/flatpickr.min');
 
-require('./includes/file-manager.min');
 require('./includes/datepicker');
 

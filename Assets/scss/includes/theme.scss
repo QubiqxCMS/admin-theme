@@ -1,3 +1,4 @@
+@import "fontawesome";
 @import "/bower_components/animate.css/animate.min";
 @import "/bower_components/jquery.scrollbar/jquery.scrollbar";
 @import "/bower_components/fullcalendar/dist/fullcalendar.min";
@@ -42,9 +43,9 @@
 @import "/bower_components/bootstrap/scss/close";
 @import "/bower_components/bootstrap/scss/modal";
 @import "/bower_components/bootstrap/scss/tooltip";
-@import "/bower_components/bootstrap/scss/popover"; 
+@import "/bower_components/bootstrap/scss/popover";
 @import "/bower_components/bootstrap/scss/carousel";
-@import "/bower_components/bootstrap/scss/utilities"; 
+@import "/bower_components/bootstrap/scss/utilities";
 
 
 // Bootstrap overrides
@@ -71,7 +72,7 @@
 
 
 // Core styles
-@import "inc/fonts";
+//@import "inc/fonts";
 @import "inc/generics";
 @import "inc/utilities";
 @import "inc/base";

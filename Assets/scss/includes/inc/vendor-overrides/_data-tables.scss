@@ -80,7 +80,7 @@
       &:focus {
         border-color: $input-focus-border-color;
       }
-      
+
       @include placeholder {
         color: $input-placeholder-color;
       }
@@ -102,7 +102,7 @@
   }
 
   &:after {
-    content: '\f197';
+    content: '\f0c9';
   }
 
   select {
@@ -114,7 +114,7 @@
   overflow: hidden;
 
   &:after {
-    content: '\f1c3';
+    content: '\f002';
   }
 }
 
@@ -159,7 +159,7 @@
       color: $pagination-color;
     }
   }
-  
+
   &.current,
   &.disabled {
     cursor: default;
@@ -183,19 +183,19 @@
 
   &.previous {
     &:before {
-      content: '\F2FF';
+      content: '\f060';
     }
   }
 
   &.next {
     &:before {
-      content: '\F301';
+      content: '\F061';
     }
   }
 
   &.disabled {
     opacity: 0.6;
-    
+
     &:hover,
     &:focus {
       color: $pagination-color;

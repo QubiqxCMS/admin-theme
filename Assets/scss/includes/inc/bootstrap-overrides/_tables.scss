@@ -28,7 +28,7 @@
   table {
     th {
       user-select: none;
-      cursor: pointer; 
+      cursor: pointer;
       position: relative;
 
       & > i.fa {
@@ -79,7 +79,7 @@
   }
 
   &:before {
-    content: '\f1c3';
+    content: '\f002';
     font-family: $font-family-icon;
     font-size: 1.5rem;
     position: absolute;
