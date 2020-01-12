@@ -104,6 +104,7 @@ $(document).ready(function () {
             --------------------------------------------*/
             case 'notifications-clear':
                 e.stopPropagation();
+                $('.top-nav__notify').removeClass('top-nav__notify');
 
                 var items = $('.top-nav__notifications .listview__item');
                 var itemsCount = items.length;
@@ -142,5 +143,5 @@ $(document).ready(function () {
                 $(this).closest('.toolbar').find('.toolbar__search').fadeOut(200);
                 break;
         }
-    }); 
+    });
 });

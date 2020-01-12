@@ -28,20 +28,35 @@ header {
   margin-top: 15px !important;
 }
 
-.hideckeditorwrapper{
-  .cke_top{
-    display: none;
-  }
-}
-.selectize-dropdown, .selectize-input, .selectize-input input{
-  color: grey !important;
-}
-.select{
-  &:before{
+.hideckeditorwrapper {
+  .cke_top {
     display: none;
   }
 }
 
-.form-control{
+.selectize-dropdown, .selectize-input, .selectize-input input {
+  color: grey !important;
+}
+
+.select {
+  &:before {
+    display: none;
+  }
+}
+
+.form-control {
   //color: white !important;
+}
+
+.actions__item {
+  height: auto;
+  width: auto;
+  padding: 10px;
+  background-color: $green;
+  &:hover{
+    background-color: darken($green, 20%);
+  }
+}
+.listview__content > p{
+  white-space: unset;
 }
