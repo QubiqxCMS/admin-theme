@@ -53,11 +53,16 @@ header {
   width: auto;
   padding: 10px;
   background-color: $green;
-  &:hover{
+
+  &:hover {
     background-color: darken($green, 20%);
   }
 }
-.listview__content > p{
+
+.listview__content > p {
   white-space: unset;
 }
 
+.table-fixed {
+  table-layout: fixed;
+}
