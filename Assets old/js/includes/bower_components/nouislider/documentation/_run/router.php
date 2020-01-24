@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
     chdir('../');
 
     $request = parse_url(strtolower($_SERVER['REQUEST_URI']));

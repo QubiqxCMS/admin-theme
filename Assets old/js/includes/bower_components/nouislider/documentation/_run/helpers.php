@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
     function fgc($name)
     {
         return file_get_contents('./'.$GLOBALS['page'].'/'.$name);
