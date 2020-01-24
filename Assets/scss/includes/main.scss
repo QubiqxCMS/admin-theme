@@ -1,0 +1,406 @@
+@import "./custom";
+@import "./datepicker";
+@import "./file-manager";
+@import "./fullcalendar";
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-gradient-primary {
+  background-image: linear-gradient(90deg, darken($primary, 10%), darken($primary, 20%));
+  //background-image: linear-gradient(-45deg, darken($primary, 20%), darken($primary, 20%));
+}
+
+input, select, textarea, button, a {
+  &:focus, &:hover, &:active, &:visited {
+    outline: none;
+  }
+}
+
+.font-icon-bigger {
+  font-size: 17px !important;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.max-height-notifications {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.logo-brand {
+  max-height: 50px;
+}
+
+.content-height {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+@media(max-width: 1024px) {
+  .sidebar-menu {
+    background-image: linear-gradient(90deg, darken($primary, 10%), darken($primary, 20%));
+  }
+}
+
+.table-striped {
+  @apply w-full;
+  thead {
+    th {
+      @apply text-left;
+      @apply px-4;
+      @apply py-2;
+    }
+  }
+
+  tbody {
+    td {
+      @apply px-4;
+      @apply py-2;
+      @apply border;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #fff;
+
+      &:hover {
+        background-color: darken(#fff, 10%);
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+
+      &:hover {
+        background-color: darken(#f2f2f2, 10%);
+      }
+    }
+  }
+}
+
+.card {
+  @apply rounded;
+  @apply flex;
+  //@apply justify-center;
+  //@apply items-center;
+  //@apply text-left;
+  @apply p-5;
+  //@apply bg-gray-300;
+  background-color: transparentize(rgb(203, 213, 224), 0.4);
+  @apply mt-10;
+  @apply shadow-lg;
+  @apply flex-col;
+}
+
+.card2 {
+  @apply card;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.faster {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.dataTables_wrapper {
+  width: 100%;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.serialization {
+  //bg-gray-600 p-4 my-2 rounded
+  &:hover {
+    cursor: pointer;
+  }
+
+  list-style: none;
+  list-style-type: none;
+
+  & > li > ol {
+    list-style: none;
+    list-style-type: none;
+
+    & > li > ol {
+      list-style: none;
+      list-style-type: none;
+    }
+  }
+
+  font-size: 16px;
+
+  & > li, & > li > ol > li {
+    background: transparentize(gray, 0.8);
+    @apply p-4;
+    @apply my-2;
+    @apply rounded;
+  }
+
+}
+
+.tab {
+  .tab-link {
+    &.active {
+      @apply border-primary;
+      @apply bg-primary;
+      @apply text-white;
+      &:hover {
+        @apply border-primary;
+        @apply bg-primary;
+      }
+    }
+  }
+
+  .tab-link {
+    @apply border-white;
+    @apply bg-white;
+    @apply text-primary;
+    &:hover {
+      @apply border-gray-200;
+      @apply bg-gray-200;
+    }
+  }
+}
+
+.tab2 {
+  .tab-link2 {
+    &.active {
+      @apply border-primary;
+      @apply bg-primary;
+      @apply text-white;
+      &:hover {
+        @apply border-primary;
+        @apply bg-primary;
+      }
+    }
+  }
+
+  .tab-link {
+    @apply border-white;
+    @apply bg-white;
+    @apply text-primary;
+    &:hover {
+      @apply border-gray-200;
+      @apply bg-gray-200;
+    }
+  }
+}
+
+.tab-pane {
+  @apply hidden;
+  &.active {
+    @apply block;
+  }
+}
+
+.arrow-down-icon-select {
+  @apply absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.fc-icon {
+  color: black !important;
+  margin-top: 15px !important;
+}
+
+.hideckeditorwrapper {
+  .cke_top {
+    display: none;
+  }
+}
+
+//.selectize-dropdown, .selectize-input, .selectize-input input {
+//  color: grey !important;
+//}
+
+//.select {
+//  &:before {
+//    display: none;
+//  }
+//}
+
+.form-control {
+  //color: white !important;
+}
+
+//.actions__item {
+//  height: auto;
+//  width: auto;
+//  padding: 10px;
+//  background-color: $green;
+//
+//  &:hover {
+//    background-color: darken($green, 20%);
+//  }
+//}
+
+.listview__content > p {
+  white-space: unset;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+label {
+  @apply block;
+  @apply mb-1;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.tab-content {
+  @apply mt-4;
+}
+
+.btn-success {
+  @apply bg-green-500;
+  @apply text-white;
+  @apply rounded;
+  @apply w-auto;
+  @apply mt-4;
+  @apply p-3;
+  @apply w-fit-content;
+
+  &:hover{
+    @apply bg-green-700;
+    @apply cursor-pointer;
+  }
+}
+
+.btn-info {
+  @apply bg-blue-500;
+  @apply text-white;
+  @apply rounded;
+  @apply w-auto;
+  @apply mt-4;
+  @apply p-3;
+  @apply w-fit-content;
+
+  &:hover{
+    @apply bg-blue-700;
+    @apply cursor-pointer;
+  }
+}
+
+.btn-danger {
+  @apply bg-red-500;
+  @apply text-white;
+  @apply rounded;
+  @apply w-auto;
+  @apply mt-4;
+  @apply p-3;
+  @apply w-fit-content;
+
+  &:hover{
+    @apply bg-red-700;
+    @apply cursor-pointer;
+  }
+}
+
+.form-grid {
+  gap: 0.5rem 2rem;
+}
+
+.fc-button{
+  @apply bg-white;
+}
+
+.fc-left{
+  @apply bg-gray-300;
+}
+
+.dtp-btn-ok{
+  @apply btn-success;
+  @apply -mt-2;
+  @apply ml-2;
+}
+
+.dtp-btn-cancel{
+  @apply btn-danger;
+  @apply -mt-2;
+}
+
+.dtp-buttons{
+  @apply pb-4;
+  @apply bg-white;
+}
+
+.dtp-header{
+ background-color: darken($primary, 15%) !important;
+}
+.dtp-date, .dtp-select-day.selected{
+  background-color: $primary !important;
+}
