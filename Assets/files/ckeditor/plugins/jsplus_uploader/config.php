@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 foreach (explode("\n", file_get_contents('../../../../../../../.env')) as $e) {
     if (strpos($e, 'APP_URL') !== false) {
         $l = explode('=', $e);

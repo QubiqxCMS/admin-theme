@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 require_once 'config.php';
 
 function fail($msg)
