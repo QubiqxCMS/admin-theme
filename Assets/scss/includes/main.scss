@@ -404,3 +404,11 @@ label {
 .dtp-date, .dtp-select-day.selected{
   background-color: $primary !important;
 }
+
+.file-selector-wrapper{
+  span{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
