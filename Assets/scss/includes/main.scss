@@ -241,7 +241,7 @@ ol.serialization {
   }
 }
 
-.tab-pane {
+.tab-pane, .tab-pane2 {
   @apply hidden;
   &.active {
     @apply block;
