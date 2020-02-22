@@ -7,6 +7,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .bg-gradient-primary {
   background-image: linear-gradient(90deg, darken($primary, 10%), darken($primary, 20%));
   //background-image: linear-gradient(-45deg, darken($primary, 20%), darken($primary, 20%));
