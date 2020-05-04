@@ -19,7 +19,6 @@
 
 .bg-gradient-primary {
   background-image: linear-gradient(90deg, darken($primary, 10%), darken($primary, 20%));
-  //background-image: linear-gradient(-45deg, darken($primary, 20%), darken($primary, 20%));
 }
 
 input, select, textarea, button, a {
@@ -98,11 +97,7 @@ body {
 .card {
   @apply rounded;
   @apply flex;
-  //@apply justify-center;
-  //@apply items-center;
-  //@apply text-left;
   @apply p-5;
-  //@apply bg-gray-300;
   background-color: transparentize(rgb(203, 213, 224), 0.4);
   @apply mt-10;
   @apply shadow-lg;
@@ -174,7 +169,6 @@ body.dragging, body.dragging * {
 }
 
 ol.serialization {
-  //bg-gray-600 p-4 my-2 rounded
   &:hover {
     cursor: pointer;
   }
@@ -289,31 +283,6 @@ header {
   }
 }
 
-//.selectize-dropdown, .selectize-input, .selectize-input input {
-//  color: grey !important;
-//}
-
-//.select {
-//  &:before {
-//    display: none;
-//  }
-//}
-
-.form-control {
-  //color: white !important;
-}
-
-//.actions__item {
-//  height: auto;
-//  width: auto;
-//  padding: 10px;
-//  background-color: $green;
-//
-//  &:hover {
-//    background-color: darken($green, 20%);
-//  }
-//}
-
 .listview__content > p {
   white-space: unset;
 }
@@ -411,6 +380,7 @@ label {
 .dtp-header{
  background-color: darken($primary, 15%) !important;
 }
+
 .dtp-date, .dtp-select-day.selected{
   background-color: $primary !important;
 }

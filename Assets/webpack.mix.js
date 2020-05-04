@@ -12,9 +12,26 @@ const tailwindcss = require('tailwindcss');
  |
  */
 
-mix.options({
+mix.js('./Themes/Admin/Assets/js/app.js', './public/Themes/Admin/js')
+  .js('./Themes/Admin/Assets/js/fullcalendar.js', './public/Themes/Admin/js')
+  .sass('./Themes/Admin/Assets/scss/Aurora Online.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
+  .sass('./Themes/Admin/Assets/scss/Cijferadvies.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
+  .sass('./Themes/Admin/Assets/scss/Eclesia.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
+  .sass('./Themes/Admin/Assets/scss/file-manager.scss', './public/Themes/Admin/css')
+  .sass('./Themes/Admin/Assets/scss/Qubiqx.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
+  .sass('./Themes/Admin/Assets/scss/Studentenweekend.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
+  .copy('./Themes/Admin/Assets/files', './public/Themes/Admin/themefiles')
+  .options({
     processCssUrls: false,
-    postCss: [ tailwindcss('./Themes/Admin/Assets/tailwind.config.js') ],
-})
-
-.disableNotifications();
+  })
+  .disableNotifications();
