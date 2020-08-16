@@ -23,6 +23,9 @@ mix.js('./Themes/Admin/Assets/js/app.js', './public/Themes/Admin/js')
   .sass('./Themes/Admin/Assets/scss/Eclesia.scss', './public/Themes/Admin/css', {}, [
     tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
   ])
+  .sass('./Themes/Admin/Assets/scss/PuntenCo.scss', './public/Themes/Admin/css', {}, [
+    tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
+  ])
   .sass('./Themes/Admin/Assets/scss/file-manager.scss', './public/Themes/Admin/css')
   .sass('./Themes/Admin/Assets/scss/Qubiqx.scss', './public/Themes/Admin/css', {}, [
     tailwindcss('./Themes/Admin/Assets/tailwind.config.js'),
