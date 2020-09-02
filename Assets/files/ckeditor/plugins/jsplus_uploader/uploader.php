@@ -14,14 +14,14 @@ function sendResponse($uploadResult, $baseUrl)
 {
     global $config;
     if ($config['AllowExternalWebsites'] != '') {
-        header('Access-Control-Allow-Origin: '.$config['AllowExternalWebsites']);
+        header('Access-Control-Allow-Origin: ' . $config['AllowExternalWebsites']);
     }
 
     if ($_GET['client'] == 'plupload') {
         if ($uploadResult[0] === true) {
-            echo $baseUrl.$uploadResult[1][0];
+            echo $baseUrl . $uploadResult[1][0];
         } else {
-            echo '!'.$uploadResult[1];
+            echo '!' . $uploadResult[1];
         }
     } elseif ($_GET['client'] == 'tinymce') {
         $result = '';
@@ -30,19 +30,19 @@ function sendResponse($uploadResult, $baseUrl)
                 if (strlen($result) > 0) {
                     $result .= '|';
                 }
-                $result .= $baseUrl.$f;
+                $result .= $baseUrl . $f;
             }
         } else {
-            $result = '!'.$uploadResult[1];
+            $result = '!' . $uploadResult[1];
         }
 
         echo $result;
     } else {
         $CKEditorFuncNum = $_GET['CKEditorFuncNum'];
         if ($uploadResult[0] === true) {
-            echo '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$CKEditorFuncNum.", '".$baseUrl.$uploadResult[1][0]."', '');</script>";
+            echo '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $CKEditorFuncNum . ", '" . $baseUrl . $uploadResult[1][0] . "', '');</script>";
         } else {
-            echo '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$CKEditorFuncNum.", '', '".$uploadResult[1]."');</script>";
+            echo '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $CKEditorFuncNum . ", '', '" . $uploadResult[1] . "');</script>";
         }
     }
 }
@@ -70,35 +70,50 @@ function uploadFile(
     $thumbEnlarge,
     $thumbWidth,
     $thumbHeight
-) {
+)
+{
     if ($error != 0) {
-        $message = "There was an upload error for file  `'.${name}.'`, code #".$error.". Check your server's configuration";
+        $message = "There was an upload error for file  `'.${name}.'`, code #" . $error . ". Check your server's configuration";
         switch ($error) {
-            case UPLOAD_ERR_INI_SIZE:   $message = "The uploaded file `'.${name}.'` exceeds the upload_max_filesize directive in php.ini"; break;
-            case UPLOAD_ERR_FORM_SIZE:  $message = "The uploaded file `'.${name}.'` exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"; break;
-            case UPLOAD_ERR_PARTIAL:    $message = "The uploaded file  `'.${name}.'` was only partially uploaded"; break;
-            case UPLOAD_ERR_NO_FILE:    $message = 'No file was uploaded'; break;
-            case UPLOAD_ERR_NO_TMP_DIR: $message = 'Missing a temporary folder on your server'; break;
-            case UPLOAD_ERR_CANT_WRITE: $message = 'Failed to write file to disk on your server'; break;
-            case UPLOAD_ERR_EXTENSION:  $message = 'File upload stopped by extension'; break;
+            case UPLOAD_ERR_INI_SIZE:
+                $message = "The uploaded file `'.${name}.'` exceeds the upload_max_filesize directive in php.ini";
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                $message = "The uploaded file `'.${name}.'` exceeds the MAX_FILE_SIZE directive that was specified in the HTML form";
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                $message = "The uploaded file  `'.${name}.'` was only partially uploaded";
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                $message = 'No file was uploaded';
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                $message = 'Missing a temporary folder on your server';
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                $message = 'Failed to write file to disk on your server';
+                break;
+            case UPLOAD_ERR_EXTENSION:
+                $message = 'File upload stopped by extension';
+                break;
         }
 
         return [false, $message];
     }
 
     if ($size == 0) {
-        return [false, 'File `'.$name.'` size = 0'];
+        return [false, 'File `' . $name . '` size = 0'];
     }
 
     if ($maxSize > 0 && $size > $maxSize) {
-        return [false, 'Size of file `'.$name.'` exceeds the limit of '.$maxSize.' bytes'];
+        return [false, 'Size of file `' . $name . '` exceeds the limit of ' . $maxSize . ' bytes'];
     }
 
     $a = explode('.', $name);
     $type = $a[count($a) - 1];
     error_log($type);
     if ($allowedExtensions[0] != '*' && !in_array(strtolower($type), array_map('strtolower', $allowedExtensions))) {
-        return [false, 'Wrong extension for file `'.$name.'`. Allowed extensions are: '.implode(', ', $allowedExtensions)];
+        return [false, 'Wrong extension for file `' . $name . '`. Allowed extensions are: ' . implode(', ', $allowedExtensions)];
     }
 
     $fileName;
@@ -112,16 +127,16 @@ function uploadFile(
         if ($i == 0) {
             $fileName = $name;
         } else {
-            $fileName = $i.'_'.$name;
+            $fileName = $i . '_' . $name;
         }
-        $ok = !is_file($toDir.$fileName);
+        $ok = !is_file($toDir . $fileName);
         if ($doThumb) {
             $fileNameThumb = getThumbFileName($fileName);
-            $ok = $ok && !file_exists($toDir.$fileNameThumb);
+            $ok = $ok && !file_exists($toDir . $fileNameThumb);
         }
     } while (!$ok);
 
-    $filePath = $toDir.$fileName;
+    $filePath = $toDir . $fileName;
     if (is_uploaded_file($tmp_name)) {
         $moveResult = move_uploaded_file($tmp_name, $filePath);
     } else {
@@ -140,7 +155,7 @@ function uploadFile(
             true
         );
         if ($err != null) {
-            return [false, 'Error while resizing image `'.$name.'`: '.$err];
+            return [false, 'Error while resizing image `' . $name . '`: ' . $err];
         }
     }
 
@@ -153,7 +168,7 @@ function uploadFile(
             false
         );
         if ($err != null) {
-            return [false, 'Error while making thumbnail of image `'.$name.'`: '.$err];
+            return [false, 'Error while making thumbnail of image `' . $name . '`: ' . $err];
         }
     }
 
@@ -170,7 +185,7 @@ function rehost($url, $maxSize)
     }
 
     if ($bytes == false) {
-        return [false, 'Unable to locate file on external server'.($maxSize > 0 ? ' or file size limit exceeded' : '')];
+        return [false, 'Unable to locate file on external server' . ($maxSize > 0 ? ' or file size limit exceeded' : '')];
     }
 
     // $http_response_header filled by file_get_contents()
@@ -188,18 +203,18 @@ function rehost($url, $maxSize)
     }
 
     $tmpDir = sys_get_temp_dir();
-    if (file_exists($tmpDir.'/'.$file)) {
+    if (file_exists($tmpDir . '/' . $file)) {
         $n = 1;
         do {
             $n++;
-        } while (file_exists($tmpDir.'/'.$n.'_'.$file));
-        $file = $n.'_'.$file;
+        } while (file_exists($tmpDir . '/' . $n . '_' . $file));
+        $file = $n . '_' . $file;
     }
-    $tmpFile = $tmpDir.'/'.$file;
+    $tmpFile = $tmpDir . '/' . $file;
 
     $bytesDownloaded = file_put_contents($tmpFile, $bytes);
     if ($bytesDownloaded === false) {
-        return [false, 'Unable to write downloaded data to: '.$tmpFile];
+        return [false, 'Unable to write downloaded data to: ' . $tmpFile];
     }
 
     return [true, $tmpFile];
@@ -213,7 +228,7 @@ function upload($doThumb, $imgEnlarge, $imgWidth, $imgHeight, $thumbEnlarge, $th
     if (!empty($_GET) && isset($_GET['type']) && array_key_exists($_GET['type'], $config['ResourceType'])) {
         $rType = $config['ResourceType'][$_GET['type']];
     } else {
-        return [false, 'Resource type (type) is defined incorrectly ('.$_GET['type'].')'];
+        return [false, 'Resource type (type) is defined incorrectly (' . $_GET['type'] . ')'];
     }
 
     if (!isset($_GET['rehost'])) {
@@ -304,40 +319,40 @@ function resizeImg($sourceFile, $resizeOnLess, $maxWidth, $maxHeight, $resizesel
 
     switch ($sourceImageAttr['mime']) {
         case 'image/gif':
-                if (@imagetypes() & IMG_GIF) {
-                    $oImage = @imagecreatefromgif($sourceFile);
-                } else {
-                    $ermsg = 'GIF images are not supported';
-                }
+            if (@imagetypes() & IMG_GIF) {
+                $oImage = @imagecreatefromgif($sourceFile);
+            } else {
+                $ermsg = 'GIF images are not supported';
+            }
 
             break;
         case 'image/jpeg':
-                if (@imagetypes() & IMG_JPG) {
-                    $oImage = @imagecreatefromjpeg($sourceFile);
-                } else {
-                    $ermsg = 'JPEG images are not supported';
-                }
+            if (@imagetypes() & IMG_JPG) {
+                $oImage = @imagecreatefromjpeg($sourceFile);
+            } else {
+                $ermsg = 'JPEG images are not supported';
+            }
 
             break;
         case 'image/png':
-                if (@imagetypes() & IMG_PNG) {
-                    $oImage = @imagecreatefrompng($sourceFile);
-                } else {
-                    $ermsg = 'PNG images are not supported';
-                }
+            if (@imagetypes() & IMG_PNG) {
+                $oImage = @imagecreatefrompng($sourceFile);
+            } else {
+                $ermsg = 'PNG images are not supported';
+            }
 
             break;
         case 'image/wbmp':
-                if (@imagetypes() & IMG_WBMP) {
-                    $oImage = @imagecreatefromwbmp($sourceFile);
-                } else {
-                    $ermsg = 'WBMP images are not supported';
-                }
+            if (@imagetypes() & IMG_WBMP) {
+                $oImage = @imagecreatefromwbmp($sourceFile);
+            } else {
+                $ermsg = 'WBMP images are not supported';
+            }
 
             break;
         default:
-            $ermsg = $sourceImageAttr['mime'].' images are not supported';
-        break;
+            $ermsg = $sourceImageAttr['mime'] . ' images are not supported';
+            break;
     }
 
     if (isset($ermsg) || $oImage === false) {
@@ -428,7 +443,7 @@ function run()
             if ($_GET['ie'] == '1') {
                 $imgEnlarge = true;
             } else {
-                fail('Image Resize (ie) value is incorrect ('.$_GET['ie'].')');
+                fail('Image Resize (ie) value is incorrect (' . $_GET['ie'] . ')');
             }
         }
         $imgWidth = 0;
@@ -436,20 +451,20 @@ function run()
             $imgWidth = $_GET['iw'];
         }
         if (preg_match('/^\d{1, 5}$/', $imgWidth) != null) {
-            fail('Image Width (iw) value is not positive integer number ('.$imgWidth.')');
+            fail('Image Width (iw) value is not positive integer number (' . $imgWidth . ')');
         }
         if ($imgWidth > $config['MaxImgResizeWidth']) {
-            fail('Image Width (iw) value is too big ('.$imgWidth.')');
+            fail('Image Width (iw) value is too big (' . $imgWidth . ')');
         }
         $imgHeight = 0;
         if (isset($_GET['ih'])) {
             $imgHeight = $_GET['ih'];
         }
         if (preg_match('/^\d{1, 5}$/', $imgHeight) != null) {
-            fail('Image Height (ih) value is not positive integer number ('.$imgHeight.')');
+            fail('Image Height (ih) value is not positive integer number (' . $imgHeight . ')');
         }
         if ($imgHeight > $config['MaxImgResizeHeight']) {
-            fail('Image Height (ih) value is too big ('.$imgHeight.')');
+            fail('Image Height (ih) value is too big (' . $imgHeight . ')');
         }
 
         // Thumbnail resize options
@@ -458,7 +473,7 @@ function run()
             if ($_GET['te'] == '1') {
                 $thumbEnlarge = true;
             } else {
-                fail('Thumbnail Resize (te) value is incorrect ('.$_GET['te'].')');
+                fail('Thumbnail Resize (te) value is incorrect (' . $_GET['te'] . ')');
             }
         }
         $thumbWidth = 0;
@@ -466,20 +481,20 @@ function run()
             $thumbWidth = $_GET['tw'];
         }
         if (preg_match('/^\d{1, 5}$/', $thumbWidth) != null) {
-            fail('Thumbnail Width (tw) value is not positive integer number ('.$thumbWidth.')');
+            fail('Thumbnail Width (tw) value is not positive integer number (' . $thumbWidth . ')');
         }
         if ($thumbWidth > $config['MaxThumbResizeWidth']) {
-            fail('Thumbnail Width (tw) value is too big ('.$thumbWidth.')');
+            fail('Thumbnail Width (tw) value is too big (' . $thumbWidth . ')');
         }
         $thumbHeight = 0;
         if (isset($_GET['th'])) {
             $thumbHeight = $_GET['th'];
         }
         if (preg_match('/^\d{1, 5}$/', $thumbHeight) != null) {
-            fail('Thumbnail Height (th) value is not positive integer number ('.$thumbHeight.')');
+            fail('Thumbnail Height (th) value is not positive integer number (' . $thumbHeight . ')');
         }
         if ($thumbHeight > $config['MaxThumbResizeHeight']) {
-            fail('Thumbnail Height (th) value is too big ('.$thumbHeight.')');
+            fail('Thumbnail Height (th) value is too big (' . $thumbHeight . ')');
         }
 
         $doThumb = $_GET['type'] == 'Images' && isset($_GET['makeThumb']);
