@@ -2,6 +2,7 @@
   "name": "qubiqxcms/admin-theme",
   "type": "asgard-theme",
   "description": "Admin theme",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Robin van Maasakker",
