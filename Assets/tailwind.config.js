@@ -31,6 +31,9 @@ module.exports = {
     plugins: [
         require('tailwindcss'),
         require('autoprefixer'),
+        require('tailwindcss-plugins/pagination'),
     ],
-    purge: false,
+    purge: [
+
+    ],
 }
